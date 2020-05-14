@@ -2,7 +2,7 @@ import React, { useContext, useCallback } from "react";
 import update from "immutability-helper";
 import Card from "./Card";
 
-import { AppContext } from "../../App";
+import { AppContext } from "../Container";
 
 const Container = () => {
   const { tasks, setTasks } = useContext(AppContext);

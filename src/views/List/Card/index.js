@@ -3,7 +3,7 @@ import { FiTrash } from "react-icons/fi";
 import { useDrag, useDrop } from "react-dnd";
 import ItemTypes from "../ItemTypes";
 
-import { AppContext } from "../../../App";
+import { AppContext } from "../../Container";
 
 const Card = ({ id, text, index, moveCard }) => {
   const { tasks, setTasks } = useContext(AppContext);

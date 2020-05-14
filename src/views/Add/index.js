@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { FiPlus } from "react-icons/fi";
-import { AppContext } from "../../App";
+import { AppContext } from "../Container";
 
 export default () => {
   const { setTasks, tasks } = useContext(AppContext);
