@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,500&display=swap');
+
+html,
+body,
+.container,
+.root,
+.vsc-initialized {
+  background-color: rgb(25, 24, 31);
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1.title {
+  font-size: 24px;
+  margin-top: 20px;
+  color: #eee;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+
+span.tip {
+  font-size: 14px;
+  color: #999;
+  font-family: 'Montserrat', sans-serif;
+}
+
+input.input-text {
+  max-width: 100%;
+  width: 100%;
+  height: 40px;
+  background-color: rgb(25, 24, 31);
+  border-color: rgb(62, 61, 68);
+  color: #fff;
+  font-size: 16px;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 2px;
+  padding: 0 10px;
+  transition: border-color 0.2s;
+}
+
+input.input-text::placeholder {
+  color: #999;
+}
+
+input.input-text:disabled {
+  cursor: not-allowed;
+}
+
+input.input-text:focus {
+  outline: none;
+  outline-offset: none;
+  border-color: #fad15c;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 2px;
+}
+
+button.button-add {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fad15c;
+  color: rgb(25, 24, 31);
+  border-radius: 50%;
+}
+
+button.button-add:hover {
+  background-color: #e6bf54;
+}
+
+button.button-add:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.1rem #555 !important;
+}
+
+div.list-area ul li {
+  background-color: rgb(25, 24, 31);
+  color: #fff;
+  margin: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  cursor: move;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75) !important;
+}
+
+div.list-area ul li button.button-none {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+}
+
+div.list-area ul li button.button-none:hover {
+  color: rgb(209, 209, 209);
+}
+
+div.list-area ul li button.button-none:focus {
+  outline: 0;
+  box-shadow: none;
+}
