@@ -6,9 +6,9 @@ import List from "./views/Container";
 export default () => {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route path="/" exact component={List} />
-      </Switch>
+      {/* <Switch> */}
+      <Route path="/" exact component={List} />
+      {/* </Switch> */}
     </BrowserRouter>
   );
 };
