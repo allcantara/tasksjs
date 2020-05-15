@@ -7,7 +7,7 @@ export default () => {
   return (
     <BrowserRouter>
       {/* <Switch> */}
-      <Route path="/" exact component={List} />
+      <Route path="/tasksjs" exact component={List} />
       {/* </Switch> */}
     </BrowserRouter>
   );
