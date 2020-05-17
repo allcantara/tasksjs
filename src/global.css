@@ -90,14 +90,22 @@ div.list-area ul li {
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75) !important;
 }
 
+div.list-area ul li input.input-text {
+  background-color: rgba(255, 255, 255, 0.055);
+  border: none;
+  border-radius: 1px;
+}
+
 div.list-area ul li button.button-none {
   background-color: transparent;
   border: none;
   color: #fff;
+  margin: 2px;
+  border-radius: 50%;
 }
 
 div.list-area ul li button.button-none:hover {
-  color: rgb(209, 209, 209);
+  color: rgb(131, 131, 131);
 }
 
 div.list-area ul li button.button-none:focus {

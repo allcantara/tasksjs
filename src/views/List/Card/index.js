@@ -1,5 +1,6 @@
-import React, { useRef, useContext } from "react";
-import { FiTrash } from "react-icons/fi";
+import React, { useRef, useContext, useState } from "react";
+import { FiTrash, FiEdit3, FiSave } from "react-icons/fi";
+import { MdClose } from "react-icons/md";
 import { useDrag, useDrop } from "react-dnd";
 import ItemTypes from "../ItemTypes";
 
@@ -7,6 +8,8 @@ import { AppContext } from "../../Container";
 
 const Card = ({ id, text, index, moveCard }) => {
   const { tasks, setTasks } = useContext(AppContext);
+  const [isEdit, setIsEdit] = useState(false);
+  const [taskText, setTaskText] = useState(text);
 
   const ref = useRef(null);
   const [, drop] = useDrop({
@@ -66,15 +69,60 @@ const Card = ({ id, text, index, moveCard }) => {
     setTasks([...list]);
   }
 
+  function handleUpdateTask(data) {
+    let list = tasks;
+    list.map((item) => {
+      if (item.id === data.id) {
+        item.text = data.taskText;
+      }
+    });
+    setTasks([...list]);
+    handleEditTask();
+  }
+
+  function handleEditTask() {
+    setIsEdit(() => !isEdit);
+  }
+
   return (
     <li ref={ref} style={{ opacity }} className="list-group-item">
-      {text}
-      <button
-        className="button-none"
-        onClick={() => handleDeleteTask({ id, text })}
-      >
-        <FiTrash color="#fff" />
-      </button>
+      {!isEdit ? (
+        taskText
+      ) : (
+        <input
+          type="text"
+          className="input-text"
+          value={taskText}
+          onChange={(e) => setTaskText(e.target.value)}
+        />
+      )}
+      <div className="d-flex">
+        {!isEdit ? (
+          <>
+            <button className="button-none" onClick={() => handleEditTask()}>
+              <FiEdit3 />
+            </button>
+            <button
+              className="button-none"
+              onClick={() => handleDeleteTask({ id, taskText })}
+            >
+              <FiTrash />
+            </button>
+          </>
+        ) : (
+          <>
+            <button
+              className="button-none ml-2"
+              onClick={() => handleUpdateTask({ id, taskText })}
+            >
+              <FiSave />
+            </button>
+            <button className="button-none" onClick={() => handleEditTask()}>
+              <MdClose size={20} />
+            </button>
+          </>
+        )}
+      </div>
     </li>
   );
 };
