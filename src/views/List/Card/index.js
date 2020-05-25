@@ -84,6 +84,12 @@ const Card = ({ id, text, index, moveCard }) => {
     setIsEdit(() => !isEdit);
   }
 
+  function onClickEnter(event, data) {
+    if (event.key === "Enter") {
+      handleUpdateTask(data);
+    }
+  }
+
   return (
     <li ref={ref} style={{ opacity }} className="list-group-item">
       {!isEdit ? (
@@ -94,6 +100,7 @@ const Card = ({ id, text, index, moveCard }) => {
           className="input-text"
           value={taskText}
           onChange={(e) => setTaskText(e.target.value)}
+          onKeyPress={(e) => onClickEnter(e, { id, taskText })}
         />
       )}
       <div className="d-flex">

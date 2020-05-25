@@ -12,7 +12,7 @@ export default () => {
       const taskArray = JSON.parse(list);
       setTasks([...taskArray]);
     }
-  }, []);
+  }, [setTasks]);
 
   useEffect(() => {
     localStorage.clear();
@@ -25,7 +25,7 @@ export default () => {
     setText("");
   }
 
-  function handleEnter(event) {
+  function onKeyEnter(event) {
     if (event.key === "Enter") {
       handleAdd();
     }
@@ -44,7 +44,7 @@ export default () => {
         id="input-task"
         value={text}
         onChange={(e) => setText(e.target.value)}
-        onKeyPress={(e) => handleEnter(e)}
+        onKeyPress={(e) => onKeyEnter(e)}
       />
       <button
         className="btn button-add"
